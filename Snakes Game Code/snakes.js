@@ -84,9 +84,16 @@ function init(){
             var last_y = Math.round(H/10);
             
             if(this.cells[0].y<0 || this.cells[0].x <0|| this.cells[0].x>last_x || this.cells[0].y>last_y){
-                    alert("GameOver");
                     game_over = true;
                 
+            }
+            else {
+                for (var i = 1; i < this.cells.length; i++) {
+                    if (this.cells[0].x == this.cells[i].x && this.cells[0].y == this.cells[i].y) {
+                        gameOver = true;
+                        break;
+                    }
+                }
             }
             
             
@@ -152,6 +159,7 @@ function gameLoop(){
     update();
     
     if(game_over==true){
+        alert("GameOver");
         clearInterval(f);
     }
 }

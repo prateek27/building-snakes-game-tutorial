@@ -103,16 +103,16 @@ function init(){
         console.log("You pressed a key");
         console.log(e);
         
-        if(e.key=="ArrowRight"){
+        if (snake.direction != "left" && e.key == "ArrowRight") {
             snake.direction = "right";
         }
-        else if(e.key=="ArrowLeft"){
+        else if (snake.direction != "right" && e.key == "ArrowLeft") {
             snake.direction = "left";
         }
-        else if(e.key=="ArrowDown"){
+        else if (snake.direction != "up" && e.key == "ArrowDown") {
             snake.direction = "down";
         }
-        else{
+        else if (snake.direction != "down" && e.key == "ArrowUp") {
             snake.direction = "up";
         }
         
